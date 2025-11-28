@@ -1,138 +1,91 @@
-AI Travel Planner + Smart Route & Budget Advisor (Multi-Agent RAG System)
+AI Travel Planner (Multi-Agent RAG System)
+Project Overview
 
-Project: AI-Powered Personalized Tourism Planning Assistant
-Author: Adithyan A
-Course: BCA 5th Sem — Capstone Project
-Guide: Mr. Anirudha S I
-Technologies: RAG + Multi-Agent AI + Streamlit
-Status: Fully working prototype (PDF Export + Routing)
-Repo: AI-Travel-Planner/
+This application generates a personalized travel itinerary based on:
 
-🔍 Overview
-
-This project generates a personalized travel plan based on:
-
-Destination(s)
+Destination
 
 Number of days
 
-Budget level (Low / Medium / High)
+Budget level
 
-Travel group (Family / Solo / Couple / Friends)
+Travel group (family, solo, couple, friends)
 
-Interests (Beaches, History, Food, Adventure, etc.)
+Interests
 
-It uses:
+The system retrieves real tourist locations using a vector database and creates a day-wise travel plan with cost estimation, hotel suggestions, and map links.
 
-Component	Role
-Preference Agent	Understands user needs
-RAG Retrieval	Finds real attractions using embeddings + FAISS
-Planning Agent	Builds day-wise itinerary
-Costing Agent	Estimates trip cost
-Route Advisor	Suggests how to reach destination
+Features
 
-✔ Hotel suggestions included
-✔ Google Maps link for each attraction
-✔ PDF itinerary download
-✔ Multi-city routing support
-✔ Tested with multiple Indian destinations
+Personalized travel itinerary generation
 
-🧠 Architecture
-User Input →
-Preference Agent →
-RAG Search (FAISS + Embeddings) →
-Planning Agent →
-Streamlit UI (Maps + PDF Export)
+Real attraction retrieval (using RAG)
 
+Cost estimation (budget-based)
 
-Vector Model → sentence-transformers/all-mpnet-base-v2
-Frontend → Streamlit
-Backend → Python (LangChain Multi-Agent)
+Ratings and duration for each attraction
 
-✨ Key Features
+Google Maps location support
 
-Day-wise itinerary with duration & best timings
+PDF download of itinerary
 
-Ratings + Review count
+Technologies Used
 
-Cost estimation (budget-aware)
+Python
 
-Hotels near each location
+Streamlit (Web UI)
 
-Live Google Maps directions
+LangChain (Multi-Agent workflow)
 
-Downloadable PDF itinerary
+FAISS (Vector Database)
 
-📦 Dataset
+Sentence Transformer Embeddings
 
-processed_tourism_data.json
-→ Curated from India Tourism datasets
-→ Contains 350+ real attractions with:
+FPDF (PDF Generation)
 
-State, City & Tags
+Installation and Setup
+Prerequisites
 
-Review rating
+Python 3.10 or above
 
-Duration needed
+Internet connection (for model usage)
 
-Entry fee / cost factor
+Steps to Run
 
-Supports fast similarity search using embeddings.
+Clone or download this repository
 
-▶️ Quickstart (Windows)
+Open terminal in project folder
 
-1️⃣ Activate virtual environment
+Create and activate virtual environment
 
 python -m venv venv
-.\venv\Scripts\activate
+venv\Scripts\activate   (Windows)
 
 
-2️⃣ Install dependencies
+Install dependencies
 
 pip install -r requirements.txt
 
 
-3️⃣ Run application
+Run the application
 
 streamlit run app.py
 
-📂 Project Structure
-AI-Travel-Planner/
-│ app.py                → Streamlit UI + PDF + Maps
-│ agents.py             → Multi-Agent Workflow
-│ rag_pipeline.py       → RAG + Embeddings + FAISS
-│ processed_tourism_data.json
-│ requirements.txt
-└─ README.md
 
-🧪 Testing Status
-Test	Result
-Itinerary generation	✔ Passed
-Cost estimation	✔ Accurate
-PDF Export	✔ Working
-Maps Deep Link	✔ Verified
-Multi-city input	✔ Supported
+Open the link displayed in terminal in a browser
+(Default: http://localhost:8501
+)
 
-Screenshots available in final project report.
+How To Use
 
-🚀 Future Enhancements
+Enter destination (example: Mumbai)
 
-Live train/flight booking API
+Select number of days for travel
 
-Crowd & weather prediction
+Choose budget level and trip type
 
-Android mobile app version
+Enter interests (example: beaches, history, food)
 
-Offline city maps with navigation
+Click "Generate Itinerary"
 
-Voice-enabled tourist guide
-
-👨‍🎓 Author
-Adithyan A	
-
-Guided by: Mr. Anirudha S I
-
-License
-
-Academic & research use only.
-Not for commercial deployment.
+Download PDF if needed
